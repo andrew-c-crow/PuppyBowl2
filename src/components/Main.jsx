@@ -1,18 +1,30 @@
 import React, {useState, useEffect} from "react";
-import {Navbar} from "./"
+import {Navbar, AllPuppies} from "./"
+
+
+
+
 const Main = () => {
  
-const [puppies, setPuppies] = useState([])
+const [puppyData, setPuppyData] = useState([])
 
-const getPuppies = async () => {
+console.log(puppyData)
+
+useEffect (() => {
+const getPuppyData = async () => {
 
   const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2209-ftb-et-web-ft/players');
-  const puppies = await response.json();
-  setPuppies(puppies);
+  const result = await response.json();
+  const puppies = result.data.players
+  setPuppyData(puppies)
 
 }
+getPuppyData()
+}, [])
+
 
 const [searchedPuppy, setSearchedPuppy] = useState ({})
+
 const postPuppy = async (playerId) => {
 const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2209-ftb-et-web-ft/players${playerId}`)
 
@@ -25,7 +37,7 @@ const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2209-ftb-
 return (
     <div id="main">
    <Navbar/>
-   
+   <AllPuppies puppyData= {puppyData}/>
   </div>
   );
 };

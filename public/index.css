@@ -18,3 +18,22 @@ body {
   align-items: center;
 }
 
+.puppyContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.puppy {
+  margin: 5px;
+
+}
+
+.puppyImage {
+  width: 300px;
+}
+
+.puppyName {
+  display: flex;
+  justify-content: space-around;
+}
