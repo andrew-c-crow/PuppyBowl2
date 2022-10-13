@@ -1,8 +1,9 @@
 import React from "react";
+import {DetailButton} from "./";
 
 const AllPuppies = (props) => {
   const myPuppies = props.puppyData;
-  console.log(myPuppies);
+  ;
   return (
     <div className="puppyContainer">
       {myPuppies.length ? (
@@ -14,6 +15,8 @@ const AllPuppies = (props) => {
               <div className= "puppyBreed">{puppy.breed}</div>
               <div className= "puppyStatus"> {puppy.status}</div>
               <div className= "puppyId"> {puppy.id} </div>
+                 {/* <DetailButton/>   */}
+
             </div>
           );
         })
