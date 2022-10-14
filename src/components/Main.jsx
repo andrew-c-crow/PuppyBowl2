@@ -29,17 +29,19 @@ const Main = () => {
     setClickedPuppy(puppy);
   };
 
+  const [searchedDog, setSearchedDog] = useState('')
+
+  console.log(searchedDog)
 
   return (
     <div id="main">
       <Navbar />
-      {clickedPuppy.id ? 
+      {searchedDog ? <SinglePuppy /> :
+      clickedPuppy.id ? 
       <SinglePuppy  setClickedPuppy= {setClickedPuppy} clickedPuppy= {clickedPuppy} />
       :
       <AllPuppies getPuppy= {getPuppy} puppyData={puppyData} clickedPuppy={clickedPuppy} />
-      
       }
-      
     </div>
   );
 };
