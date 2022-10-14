@@ -15,7 +15,7 @@ const AllPuppies = (props) => {
               <div className= "puppyBreed">{puppy.breed}</div>
               <div className= "puppyStatus"> {puppy.status}</div>
               <div className= "puppyId"> {puppy.id} </div>
-                 {/* <DetailButton/>   */}
+              <DetailButton puppy={puppy} getPuppy = {props.getPuppy} />
 
             </div>
           );

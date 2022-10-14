@@ -1,20 +1,17 @@
-// import React from 'react'
+import React from 'react'
 
 
-// const DetailButton = (props)=>{
+const DetailButton = (props)=>{
+
+  
+
+return (
+<button onClick= {()=> {props.getPuppy(props.puppy.id)}} className='detailButton'>See details
+<div> hello </div>
 
 
-// return (
-// {/* <button onClick={props.getPuppy(props.puppy)} className='detailButton'>See details  */}
-// {/* <div> hello </div>  */}
-
-
-
-
-
-
-// </button>) 
-// )}
+</button>) 
+}
 
 
 
@@ -22,4 +19,4 @@
 
 
 
-// export default DetailButton
+export default DetailButton
