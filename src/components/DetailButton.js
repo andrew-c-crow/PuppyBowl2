@@ -1,4 +1,5 @@
 import React from 'react'
+import SinglePuppy from './SinglePuppy'
 
 
 const DetailButton = (props)=>{
@@ -6,9 +7,7 @@ const DetailButton = (props)=>{
   
 
 return (
-<button onClick= {()=> {props.getPuppy(props.puppy.id)}} className='detailButton'>See details
-<div> hello </div>
-
+<button onClick= {()=> {props.getPuppy(props.puppy.id)}} className='detailButton'> See details 
 
 </button>) 
 }

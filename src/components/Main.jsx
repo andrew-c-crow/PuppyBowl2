@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, AllPuppies, DetailButton } from "./";
+import { Navbar, AllPuppies, DetailButton, SinglePuppy } from "./";
 
 const Main = () => {
   const [puppyData, setPuppyData] = useState([]);
@@ -30,16 +30,16 @@ const Main = () => {
   };
 
 
-
   return (
     <div id="main">
       <Navbar />
       {clickedPuppy.id ? 
-      <SinglePuppy  setClickedPuppy= {setClickedPuppy} clickedPuppy= {clickedPuppy}/>
+      <SinglePuppy  setClickedPuppy= {setClickedPuppy} clickedPuppy= {clickedPuppy} />
       :
-      <AllPuppies getPuppy= {getPuppy} puppyData={puppyData} />
+      <AllPuppies getPuppy= {getPuppy} puppyData={puppyData} clickedPuppy={clickedPuppy} />
       
       }
+      
     </div>
   );
 };

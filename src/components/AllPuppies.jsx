@@ -1,5 +1,6 @@
 import React from "react";
 import {DetailButton} from "./";
+import {SinglePuppy} from "./";
 
 const AllPuppies = (props) => {
   const myPuppies = props.puppyData;
@@ -15,7 +16,8 @@ const AllPuppies = (props) => {
               <div className= "puppyBreed">{puppy.breed}</div>
               <div className= "puppyStatus"> {puppy.status}</div>
               <div className= "puppyId"> {puppy.id} </div>
-              <DetailButton puppy={puppy} getPuppy = {props.getPuppy} />
+              <DetailButton puppy={puppy} getPuppy = {props.getPuppy} clickedPuppy={props.clickedPuppy} />
+              
 
             </div>
           );
