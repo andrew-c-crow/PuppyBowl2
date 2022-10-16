@@ -1,5 +1,5 @@
 import React from "react";
-import {DetailButton} from "./";
+import {DetailButton, SubmitBar} from "./";
 import {SinglePuppy} from "./";
 
 const AllPuppies = (props) => {
@@ -17,7 +17,7 @@ const AllPuppies = (props) => {
               <div className= "puppyStatus"> {puppy.status}</div>
               <div className= "puppyId"> {puppy.id} </div>
               <DetailButton puppy={puppy} getPuppy = {props.getPuppy} clickedPuppy={props.clickedPuppy} />
-              
+          
 
             </div>
           );
