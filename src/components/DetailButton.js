@@ -7,7 +7,7 @@ const DetailButton = (props)=>{
   
 
 return (
-<button onClick= {()=> {props.getPuppy(props.puppy.id)}} className='detailButton'> See details 
+<button onClick= {()=> {props.getPuppy(props.puppy.id)}} className='detailButton'> See Details 
 
 </button>) 
 }

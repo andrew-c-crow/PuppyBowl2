@@ -5,75 +5,60 @@ const SubmitBar = (props) => {
   const myPuppies = props.puppyData;
 
   const [query, setQuery] = useState("");
-  console.log(checkQuery());
-
-  // const handleChange = (event) => {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   setQuery();
-  // };
+  // console.log(checkQuery());
+  console.log(query);
 
   return (
-<div className="pupContainer">
-      <div>
-        <h2> name </h2>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name..."
-          onChange={(event) => {
-            setQuery(event.target.value);
-          }}
-        ></input>
-
-          
-
-          {myPuppies
-            .filter((puppy) => puppy.name.toLowerCase().includes(query))
-            .map((puppy) => (
-              
-              
-              <div key={`player-${puppy.id}`} className="pup">
-                <div className="pupName">
-                  
-                  <span>{puppy.name}</span> <span>{puppy.id}</span>
-                </div>
-                <div>
-                 
-                  <img className="pupImage" src={puppy.imageUrl}></img>
-                </div>
-                <div className="pupBreed">{puppy.breed}</div>
-                <div className="pupStatus"> {puppy.status}</div>
-                <div className="pupId"> {puppy.id} </div>
-                <DetailButton
-                  puppy={puppy}
-                  getPuppy={props.getPuppy}
-                  clickedPuppy={props.clickedPuppy}
-                />
-              </div>
-            
-              // <li className="listItem" key={puppy.id}>
-              //   {puppy.name}
-              //   {puppy.breed}
-
-              // </li>
-            ))}
-        </div>
+    <div>
+      <div className= "heading">
+      <h1 className="PuppyBowl">Puppy Bowl!</h1>
+      <h2> Search By Name </h2>
+      <input
+        type="text"
+        name="name"
+        placeholder="Name..."
+        onChange={(event) => {
+          setQuery(event.target.value);
+        }}
+      ></input>
       </div>
+      <div className="pupContainer">
+        {myPuppies
+          .filter((puppy) => puppy.name.toLowerCase().includes(query.toLowerCase()))
+          .map((puppy) => (
+            <div key={`player-${puppy.id}`} className="pup">
+              <div className="pupName">
+                <span>Name: {puppy.name}</span> <span>ID: {puppy.id}</span>
+              </div>
+              <div>
+                <img className="pupImage" src={puppy.imageUrl}></img>
+              </div>
+              {/* <div className="pupBreed">{puppy.breed}</div>
+              <div className="pupStatus"> {puppy.status}</div>
+              <div className="pupId"> {puppy.id} </div> */}
+              <DetailButton
+                puppy={puppy}
+                getPuppy={props.getPuppy}
+                clickedPuppy={props.clickedPuppy}
+              />
+            </div>
+          ))}
+      </div>
+    </div>
   );
 
-  function checkQuery() {
-    if (query === "") {
-      return "";
-    } else if (
-      myPuppies.filter((puppy) => puppy.name.toLowerCase().includes(query))
-    ) {
-      return myPuppies.filter((puppy) =>
-        puppy.name.toLowerCase().includes(query)
-      );
-    }
-    console.log(checkQuery());
-  }
+  // function checkQuery() {
+  //   if (query === "") {
+  //     return "";
+  //   } else if (
+  //     myPuppies.filter((puppy) => puppy.name.toLowerCase().includes(query))
+  //   ) {
+  //     return myPuppies.filter((puppy) =>
+  //       puppy.name.toLowerCase().includes(query)
+  //     );
+  //   }
+  //   console.log(checkQuery());
+  // }
 };
 
 export default SubmitBar;
