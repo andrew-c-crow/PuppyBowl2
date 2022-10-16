@@ -1,66 +1,80 @@
 import { React, useState } from "react";
-import {Navbar, AllPuppies, DetailButton} from './'
-
+import { Navbar, AllPuppies, DetailButton } from "./";
 
 const SubmitBar = (props) => {
-  const myPuppies = props.puppyData; 
-  
+  const myPuppies = props.puppyData;
+
   const [query, setQuery] = useState("");
-  console.log(checkQuery())
+  console.log(checkQuery());
 
- 
-
-
-
-
-
-
-
-  
   // const handleChange = (event) => {
   //   const name = event.target.name;
   //   const value = event.target.value;
   //   setQuery();
   // };
 
-
   return (
-    <form>
+
       <div>
-        <div>
-        
-        </div>
         <h2> name </h2>
-        <input type="text" name="name" placeholder="Name..." onChange= {(event) => {setQuery(event.target.value)}}></input>
-        <ul className="list">
-         {myPuppies.filter((puppy) =>
-          puppy.name.toLowerCase().includes(query)
-        ).map((puppy) => (
-          <li className="listItem" key={puppy.id}>
-            {puppy.name}
-          </li>
-        ))}
-      </ul>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name..."
+          onChange={(event) => {
+            setQuery(event.target.value);
+          }}
+        ></input>
 
+          
 
+          {myPuppies
+            .filter((puppy) => puppy.name.toLowerCase().includes(query))
+            .map((puppy) => (
+              
+              <div className="pupContainer">
+              <div key={`player-${puppy.id}`} className="pup">
+                <div className="pupName">
+                  
+                  <span>{puppy.name}</span> <span>{puppy.id}</span>
+                </div>
+                <div>
+                 
+                  <img className="pupImage" src={puppy.imageUrl}></img>
+                </div>
+                <div className="pupBreed">{puppy.breed}</div>
+                <div className="pupStatus"> {puppy.status}</div>
+                <div className="pupId"> {puppy.id} </div>
+                <DetailButton
+                  puppy={puppy}
+                  getPuppy={props.getPuppy}
+                  clickedPuppy={props.clickedPuppy}
+                />
+              </div>
+             </div>
+              // <li className="listItem" key={puppy.id}>
+              //   {puppy.name}
+              //   {puppy.breed}
+
+              // </li>
+            ))}
+       
       </div>
-    </form>
   );
-
 
   function checkQuery() {
     if (query === "") {
-      return "" 
-    } else if (myPuppies.filter(puppy=>puppy.name.toLowerCase().includes(query)))
-  { return (myPuppies.filter(puppy=>puppy.name.toLowerCase().includes(query)))}
-  console.log(checkQuery())
-  
+      return "";
+    } else if (
+      myPuppies.filter((puppy) => puppy.name.toLowerCase().includes(query))
+    ) {
+      return myPuppies.filter((puppy) =>
+        puppy.name.toLowerCase().includes(query)
+      );
+    }
+    console.log(checkQuery());
+  }
 };
-
-};
-
-
-
 
 export default SubmitBar;
 
@@ -69,6 +83,5 @@ export default SubmitBar;
 
 //piece of state on main that is searched puppies
 //looping through the array of all puppies, at each index check does this = id
-
 
 //onClick has a function that grabs found value

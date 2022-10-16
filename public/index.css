@@ -38,6 +38,27 @@ body {
   justify-content: space-around;
 }
 
+.pupContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.pup {
+  margin: 5px;
+  
+}
+
+.pupImage {
+  width: 300px;
+}
+
+.pupName {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 /* .detailButton {
   
 } */
