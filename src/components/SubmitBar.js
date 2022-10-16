@@ -14,7 +14,7 @@ const SubmitBar = (props) => {
   // };
 
   return (
-
+<div className="pupContainer">
       <div>
         <h2> name </h2>
         <input
@@ -32,7 +32,7 @@ const SubmitBar = (props) => {
             .filter((puppy) => puppy.name.toLowerCase().includes(query))
             .map((puppy) => (
               
-              <div className="pupContainer">
+              
               <div key={`player-${puppy.id}`} className="pup">
                 <div className="pupName">
                   
@@ -51,14 +51,14 @@ const SubmitBar = (props) => {
                   clickedPuppy={props.clickedPuppy}
                 />
               </div>
-             </div>
+            
               // <li className="listItem" key={puppy.id}>
               //   {puppy.name}
               //   {puppy.breed}
 
               // </li>
             ))}
-       
+        </div>
       </div>
   );
 

@@ -20,8 +20,11 @@ body {
 
 .puppyContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
+  align-items: center;
   margin: 5px;
+  
+  
 }
 
 .puppy {
@@ -40,8 +43,11 @@ body {
 
 .pupContainer {
   display: flex;
+ 
   flex-direction: row;
   margin: 5px;
+  width: 1500px;
+
 }
 
 .pup {
