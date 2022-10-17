@@ -12,8 +12,9 @@ const SubmitBar = (props) => {
     <div>
       <div className= "heading">
       <h1 className="PuppyBowl">Puppy Bowl!</h1>
-      <h2> Search By Name </h2>
+      <h2 className="PuppyBowl"> Search by Name </h2>
       <input
+      className="input"
         type="text"
         name="name"
         placeholder="Name..."
