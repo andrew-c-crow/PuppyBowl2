@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Warang+Citi&display=swap');
+
+* {
+
+  font-family: "Noto+Sans+Warang+Citi";
+}
+body {
+  font-family: 'Raleway', Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: linear-gradient( #a1c4fd , #c2e9fb);
+}
+
+
+
+#navbar {
+  font-family: 'Poller One', Arial, sans-serif;
+  flex-grow: 1;
+  max-height: 10%;
+  min-height: 40px;
+  background-color: #222222;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.puppyContainer {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  margin: 5px;
+  
+  
+}
+
+.puppy {
+  margin: 5px;
+
+}
+
+.puppyImage {
+  width: 300px;
+}
+
+.puppyName {
+  color: rgb(17, 19, 142);
+  display: flex;
+  justify-content: space-around;
+}
+
+.pupContainer {
+  display: flex;
+ 
+  flex-direction: row;
+  margin: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pup {
+  margin: 5px;
+  
+}
+
+.pupImage {
+  width: 300px;
+  height: 400px;
+}
+
+.pupName {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  color: rgb(17, 19, 142);
+}
+
+
+.detailButton {
+  display: flex;
+  justify-content: center;
+  align-self: center; 
+  font-size: 24px;
+  color: white;
+  background-color:rgb(17, 19, 142);
+  border-color: rgb(243, 196, 7);
+}
+.detailButton:hover {
+  transform:scale(1.2);
+  color: rgb(243, 196, 7);
+}
+
+.singlePuppy {
+display: flex;
+
+justify-content: center;
+  align-items: center;
+margin-top: 250px
+;
+
+
+
+}
+
+.singleName {
+ font-size: 30px;
+margin-right: 80px;
+font-weight: bolder;
+
+text-align: center;}
+
+
+.goBack {
+display:flex;
+justify-content: top;
+  font-size: 24px;
+  background-color: rgb(17, 19, 142);
+color: white;
+border-color: rgb(243, 196, 7)
+}
+
+.goBack:hover{
+  transform:scale(1.2);
+  color: rgb(243, 196, 7);
+}
+
+.input {
+font-size: 24px;
+border-color: rgb(243, 196, 7);
+color:rgb(17, 19, 142);
+}
+
+.PuppyBowl {
+color: rgb(17, 19, 142);
+  font-size: 30px;
+}
+
+.puppyInfo{
+color: rgb(17, 19, 142);
+  font-size: 20px;
+}
